@@ -16,12 +16,21 @@ class Course:
             print(section, ": ", self._percentage[i], "%")
         print("-----------")
 
+    def get_name(self):
+        return self._course_name
+
+    def get_sections(self):
+        return self._section
+
+    def get_percentages(self):
+        return self._percentage
+
     def get_current_grades(self):
-        return [*map(mean, self._current_grades)]
+        return [*map(mean, self._current_grades)]       # returns each section's average grades
 
     def add_grade(self, section, score):
         section_index = self._section.index(section)
-        self._current_grades[section_index].append(score)
+        self._current_grades[section_index].append(score)   # scores should be in percentage
 
     def get_final_grade(self):
         grades = [grade * self._percentage[i] * 0.01 for i, grade in enumerate(self.get_current_grades())]

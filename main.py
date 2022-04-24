@@ -1,4 +1,5 @@
 from course import Course
+from calculator import Calculator
 
 def main():
     is455 = Course("IS 455", ["Attendence", "Homework", "Final"], [10, 60, 30],
@@ -7,10 +8,11 @@ def main():
 
     is455.print_info()
     print(is455.get_current_grades())
-    is455.add_grade("Attendence", 50)
-    print(is455.get_current_grades())
     print(is455.get_final_grade())
     # cs125.print_info()
+
+    c = Calculator()
+    c.if_add(is455, "Attendence", 50)
 
 
 if __name__ == "__main__":
