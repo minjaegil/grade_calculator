@@ -12,7 +12,7 @@ def main():
     # cs125.print_info()
 
     c = Calculator()
-    c.if_add(is455, "Attendence", 50)
+    c.if_add(is455, {"Attendence": 50, "Homework": 0})
 
 
 if __name__ == "__main__":
